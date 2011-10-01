@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>Ajax con jQuery - DSL jQuery</title>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+  <div id="radio"><br>
+    Radio buttons: 
+    <br/>
+  <input type="radio" name="group1" value="jQuery"> jQuery<br>
+  <input type="radio" name="group1" value="mooTools" checked> mooTools<br>
+</div>
+
+<br/>
+<div id="content">
+
+</div>
+
+
+   <script type="text/javascript">
+     $(document).ready(function(){
+         $('input[name=group1]').click(function(){
+           var val = $(this).val();
+           var url;
+           if (val =="jQuery")
+           {
+           url="jquery.html";
+           }
+           else
+           {
+           url="mootools.html";
+
+           };
+           $('#content').load(url,function(){
+             alert('Contenido ajax cargado exitosamente!');
+             });
+           
+           });
+         
+         });
+   </script>
+
+  </body>
+
+  </html>
