@@ -5,13 +5,16 @@
     <script src="../js/jquery.min.js" type="text/javascript"></script>
   </head>
   <body>
-    Tienes la version:
-    <li id="checkversion"> </li>
-    de jQuery
     <script type="text/javascript">
-      $(document).ready(function(){
-          $('#checkversion').html($().jquery);
-          });
+          var msj;
+          if (typeof jQuery == 'undefined') {
+            msj = "Rayos, jQuery NO se ha cargado";
+          }
+          else
+          {
+            msj = "Excelente!, Tienes la version "+ $().jquery + " de jQuery";
+          }
+      document.write(msj);
     </script>
 
   </body>
